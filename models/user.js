@@ -19,7 +19,7 @@ const UserSchema = new Schema(
       trim: true,
       validate: {
         validator: (email) => {
-          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // a@b.c
         },
         message: "Invalid email address",
       },
@@ -42,8 +42,9 @@ UserSchema.pre("save", async function () {
 
 // Ensure password is hashed on update operations as well
 UserSchema.pre("findOneAndUpdate", async function () {
-  if (this.getUpdate().password) {
-    this.getUpdate().password = await hash(this.getUpdate().password, 10);
+  const updatedData = this.getUpdate();
+  if (updatedData.password) {
+    updatedData.password = await hash(updatedData.password, 10);
   }
 });
 
