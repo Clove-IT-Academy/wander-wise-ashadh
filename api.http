@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
   "name": "John Doe",
-  "email": "john.doe5@example.com",
+  "email": "john.doe6@example.com",
   "password": "test123"
 }
 
@@ -30,3 +30,13 @@ Content-Type: application/json
 
 ### DELETE USER BY ID
 DELETE {{baseUrl}}/users/{{userId}}
+
+### REGISTER USER
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane.doe2@example.com",
+  "password": "test123"
+}
