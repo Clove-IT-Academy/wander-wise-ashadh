@@ -40,3 +40,12 @@ Content-Type: application/json
   "email": "jane.doe2@example.com",
   "password": "test123"
 }
+
+### LOGIN USER
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "jane@example.com",
+  "password": "test12"
+}
