@@ -1,5 +1,5 @@
 @baseUrl = http://localhost:3000
-@userId = 6a43ae33b85a465a7850c85e
+@userId = 6a44fcb0dc3e1cf8f09a351a
 
 ### TEST API
 GET {{baseUrl}}
@@ -47,5 +47,20 @@ Content-Type: application/json
 
 {
   "email": "jane@example.com",
-  "password": "test12"
+  "password": "test123"
+}
+
+### CREATE TRIP
+POST {{baseUrl}}/trips
+Content-Type: application/json
+
+{
+  "user": "{{userId}}",
+  "title": "Trip to the moon",
+  "startDate": "2025-12-15",
+  "endDate": "2025-12-16",
+  "budget": {
+    "total": 1000
+  },
+  "destinations": ["Moon", "Mars", "Jupiter"]
 }
