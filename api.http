@@ -1,5 +1,6 @@
 @baseUrl = http://localhost:3000
 @userId = 6a44fcb0dc3e1cf8f09a351a
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTU0Y2MxNmJkOTY2ZDYwY2VhMDcwYTEiLCJpYXQiOjE3ODQ3MTk1NTAsImV4cCI6MTc4NDgwNTk1MH0.kNDC3Eo7_Cb-Rx5ArwUtR5rN4GDZmvD4xNVCBMX6j44
 
 ### TEST API
 GET {{baseUrl}}
@@ -53,9 +54,9 @@ Content-Type: application/json
 ### CREATE TRIP
 POST {{baseUrl}}/trips
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-  "user": "{{userId}}",
   "title": "Trip to the moon",
   "startDate": "2025-12-15",
   "endDate": "2025-12-16",
