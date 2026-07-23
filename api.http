@@ -1,6 +1,7 @@
 @baseUrl = http://localhost:3000
 @userId = 6a44fcb0dc3e1cf8f09a351a
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTU0Y2MxNmJkOTY2ZDYwY2VhMDcwYTEiLCJpYXQiOjE3ODQ3MTk1NTAsImV4cCI6MTc4NDgwNTk1MH0.kNDC3Eo7_Cb-Rx5ArwUtR5rN4GDZmvD4xNVCBMX6j44
+@tripId = 6a60aea2a22c59f2079c8437
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTU0Y2MxNmJkOTY2ZDYwY2VhMDcwYTEiLCJpYXQiOjE3ODQ4MDYxMDcsImV4cCI6MTc4NDg5MjUwN30.VFdbbdtGTwOnqwJ7w9eJS0QXKtycNjKvk6tQpYVr1tI
 
 ### TEST API
 GET {{baseUrl}}
@@ -65,3 +66,27 @@ Authorization: Bearer {{token}}
   },
   "destinations": ["Moon", "Mars", "Jupiter"]
 }
+
+### GET ALL TRIPS
+GET {{baseUrl}}/trips
+Authorization: Bearer {{token}}
+
+### GET TRIP BY ID
+GET {{baseUrl}}/trips/{{tripId}}
+Authorization: Bearer {{token}}
+
+### UPDATE TRIP BY ID
+PATCH {{baseUrl}}/trips/{{tripId}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Trip to the moon and back",
+  "budget": {
+    "total": 1500
+  }
+}
+
+### DELETE TRIP BY ID
+DELETE {{baseUrl}}/trips/{{tripId}}
+Authorization: Bearer {{token}}
